@@ -1,24 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import ChildO from './components/ChildO';
+import { ListAObject } from './components/ListAObject';
+import { Greet } from './components/Greet';
+import { ListObj } from './components/ListObj';
+import { Button } from './components/Button';
+import { Nice } from './components/Nice';
+import { LogFor } from './components/LogFor';
+import { Auth } from './components/Auth';
+import { TypeAsertion } from './components/TypeAsertion';
+import { Reduce } from './components/Reduce';
 function App() {
+  const newVal = {
+    first: "Pawan",
+    last: "Upadhayay"
+  }
+  const listName = [{
+    first: "Pawan",
+    last: "Upadhayay"
+  }, {
+    first: "rawan",
+    last: "ssjjs"
+  }, {
+    first: "wan",
+    last: "yay",
+  }]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greet name='Pawan' age={14} isLoggedIn={false} />
+      <ChildO> This can also hold the components over here </ChildO>
+      <ListObj newVal={newVal} />
+      <ListAObject value={listName} />
+      <Button HandleClick={(e) => console.log("Hello i am clicked hai", e)} />
+      <Nice styles={{ border: "2px solid green" }} />
+      <LogFor />
+      <Auth />
+      <TypeAsertion />
+      <Reduce />
+
     </div>
   );
 }
